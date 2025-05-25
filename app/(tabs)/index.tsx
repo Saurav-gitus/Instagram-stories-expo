@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   StyleSheet,
   View,
@@ -7,17 +7,17 @@ import {
   Image,
   SafeAreaView,
   Platform,
-} from "react-native";
-import { StoryList } from "../../components/stories";
-import { MessageSquare, Heart, Send, Bookmark } from "lucide-react-native";
-import Constants from "expo-constants";
+} from 'react-native';
+import { StoryList } from '../../components/stories';
+import { MessageSquare, Heart, Send, Bookmark } from 'lucide-react-native';
+import Constants from 'expo-constants';
 
 export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.header}>
         <Image
-          source={{ uri: "https://fontmeme.com/images/instagram-new-logo.png" }}
+          source={{ uri: 'https://fontmeme.com/images/instagram-new-logo.png' }}
           style={styles.logo}
           resizeMode="contain"
         />
@@ -28,8 +28,12 @@ export default function HomeScreen() {
       </View>
 
       <ScrollView style={styles.scrollView}>
-        <StoryList />
+        {/* Centered Story List */}
+        <View style={styles.storyContainer}>
+          <StoryList />
+        </View>
 
+        {/* Centered Feed */}
         <View style={styles.feedContainer}>
           {/* Sample feed post */}
           <View style={styles.postContainer}>
@@ -37,17 +41,17 @@ export default function HomeScreen() {
               <View style={styles.postUser}>
                 <Image
                   source={{
-                    uri: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg",
+                    uri: 'https://images.pexels.com/photos/2589653/pexels-photo-2589653.jpeg?auto=compress&cs=tinysrgb&w=600',
                   }}
                   style={styles.postAvatar}
                 />
-                <Text style={styles.postUsername}>travel_guy</Text>
+                <Text style={styles.postUsername}>saurav_kumar</Text>
               </View>
             </View>
 
             <Image
               source={{
-                uri: "https://images.pexels.com/photos/2325446/pexels-photo-2325446.jpeg",
+                uri: 'https://images.pexels.com/photos/3025496/pexels-photo-3025496.jpeg?auto=compress&cs=tinysrgb&w=600',
               }}
               style={styles.postImage}
             />
@@ -68,8 +72,8 @@ export default function HomeScreen() {
             <View style={styles.postFooter}>
               <Text style={styles.likesText}>12,345 likes</Text>
               <Text style={styles.captionText}>
-                <Text style={styles.boldText}>travel_guy</Text> Exploring
-                paradise in Bali 🌴
+                <Text style={styles.boldText}>saurav_kumar</Text> Exploring
+                Punjab 🌆
               </Text>
               <Text style={styles.viewCommentsText}>View all 243 comments</Text>
               <Text style={styles.timeText}>2 HOURS AGO</Text>
@@ -84,21 +88,21 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: "white",
-    paddingTop: Platform.OS === "android" ? Constants.statusBarHeight : 0,
+    backgroundColor: 'white',
+    paddingTop: Platform.OS === 'android' ? Constants.statusBarHeight : 0,
   },
   header: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     paddingHorizontal: 16,
     height: 56,
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: "#DBDBDB",
+    borderBottomColor: '#DBDBDB',
   },
   headerActions: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   icon: {
     marginLeft: 24,
@@ -112,20 +116,24 @@ const styles = StyleSheet.create({
   },
   feedContainer: {
     flex: 1,
+    paddingHorizontal: 0,
+    alignSelf: 'center',
+    width: '100%',
+    maxWidth: 600,
   },
   postContainer: {
     marginBottom: 12,
   },
   postHeader: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     paddingHorizontal: 12,
     height: 56,
   },
   postUser: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   postAvatar: {
     width: 32,
@@ -134,21 +142,21 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   postUsername: {
-    fontWeight: "600",
+    fontWeight: '600',
     fontSize: 14,
   },
   postImage: {
-    width: "100%",
+    width: '100%',
     height: 375,
   },
   postActions: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     paddingHorizontal: 12,
     paddingVertical: 12,
   },
   leftActions: {
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   actionIcon: {
     marginRight: 16,
@@ -158,21 +166,27 @@ const styles = StyleSheet.create({
     paddingBottom: 12,
   },
   likesText: {
-    fontWeight: "600",
+    fontWeight: '600',
     marginBottom: 6,
   },
   captionText: {
     marginBottom: 6,
   },
   boldText: {
-    fontWeight: "600",
+    fontWeight: '600',
   },
   viewCommentsText: {
-    color: "#8e8e8e",
+    color: '#8e8e8e',
     marginBottom: 6,
   },
   timeText: {
     fontSize: 10,
-    color: "#8e8e8e",
+    color: '#8e8e8e',
+  },
+  storyContainer: {
+    alignSelf: 'center',
+    width: '100%',
+    maxWidth: 600,
+    paddingVertical: 12,
   },
 });

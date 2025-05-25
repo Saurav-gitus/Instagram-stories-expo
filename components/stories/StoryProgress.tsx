@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from "react";
-import { StyleSheet, View, Animated } from "react-native";
-import type { StoryProgressProps } from "../../types/stories";
+import React, { useEffect, useRef } from 'react';
+import { StyleSheet, View, Animated } from 'react-native';
+import type { StoryProgressProps } from '../../types/stories';
 
 export const StoryProgress: React.FC<StoryProgressProps> = ({
   stories,
@@ -40,7 +40,7 @@ export const StoryProgress: React.FC<StoryProgressProps> = ({
               styles.progressBar,
               {
                 backgroundColor:
-                  index < currentIndex ? "white" : "rgba(255, 255, 255, 0.5)",
+                  index < currentIndex ? 'white' : 'rgba(255, 255, 255, 0.5)',
               },
             ]}
           />
@@ -51,7 +51,7 @@ export const StoryProgress: React.FC<StoryProgressProps> = ({
                 {
                   width: progressAnim.interpolate({
                     inputRange: [0, 1],
-                    outputRange: ["0%", "100%"],
+                    outputRange: ['0%', '100%'],
                   }),
                 },
               ]}
@@ -65,11 +65,11 @@ export const StoryProgress: React.FC<StoryProgressProps> = ({
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     paddingHorizontal: 8,
     paddingTop: 12,
-    position: "absolute",
+    position: 'absolute',
     top: 0,
     left: 0,
     right: 0,
@@ -78,21 +78,21 @@ const styles = StyleSheet.create({
   progressBarContainer: {
     flex: 1,
     height: 3,
-    backgroundColor: "rgba(255, 255, 255, 0.5)",
+    backgroundColor: 'rgba(255, 255, 255, 0.5)',
     borderRadius: 3,
     marginHorizontal: 2,
-    overflow: "hidden",
+    overflow: 'hidden',
   },
   progressBar: {
-    height: "100%",
+    height: '100%',
     borderRadius: 3,
   },
   activeProgressBar: {
-    position: "absolute",
+    position: 'absolute',
     top: 0,
     left: 0,
-    height: "100%",
-    backgroundColor: "white",
+    height: '100%',
+    backgroundColor: 'white',
     borderRadius: 3,
   },
 });

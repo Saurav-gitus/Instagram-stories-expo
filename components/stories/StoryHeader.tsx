@@ -1,7 +1,7 @@
-import React from "react";
-import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
-import { X } from "lucide-react-native";
-import { formatDistanceToNow } from "../../utils/dateUtils";
+import React from 'react';
+import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
+import { X } from 'lucide-react-native';
+import { formatDistanceToNow } from '../../utils/dateUtils';
 
 interface StoryHeaderProps {
   username: string;
@@ -26,7 +26,7 @@ export const StoryHeader: React.FC<StoryHeaderProps> = ({
           <Text style={styles.username}>{username}</Text>
           <Text style={styles.timestamp}>
             {formatDistanceToNow(new Date(timestamp))}
-            {location ? ` • ${location}` : ""}
+            {location ? ` • ${location}` : ''}
           </Text>
         </View>
       </View>
@@ -40,10 +40,10 @@ export const StoryHeader: React.FC<StoryHeaderProps> = ({
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    position: "absolute",
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    position: 'absolute',
     top: 50,
     left: 0,
     right: 0,
@@ -51,33 +51,33 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   userInfo: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   avatar: {
     width: 36,
     height: 36,
     borderRadius: 18,
     borderWidth: 2,
-    borderColor: "white",
+    borderColor: 'white',
   },
   textContainer: {
     marginLeft: 10,
   },
   username: {
-    color: "white",
-    fontWeight: "600",
+    color: 'white',
+    fontWeight: '600',
     fontSize: 14,
   },
   timestamp: {
-    color: "rgba(255, 255, 255, 0.8)",
+    color: 'rgba(255, 255, 255, 0.8)',
     fontSize: 12,
   },
   closeButton: {
     width: 32,
     height: 32,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 
