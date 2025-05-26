@@ -202,7 +202,7 @@ const StoryViewer: React.FC<StoryViewerProps> = ({
               <Image
                 source={{ uri: currentStory.imageUrl }}
                 style={styles.image}
-                resizeMode="center"
+                resizeMode="contain"
               />
               <LinearGradient
                 colors={['rgba(0,0,0,0.4)', 'transparent', 'rgba(0,0,0,0.3)']}
