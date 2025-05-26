@@ -202,7 +202,7 @@ const StoryViewer: React.FC<StoryViewerProps> = ({
               <Image
                 source={{ uri: currentStory.imageUrl }}
                 style={styles.image}
-                resizeMode="cover"
+                resizeMode="center"
               />
               <LinearGradient
                 colors={['rgba(0,0,0,0.4)', 'transparent', 'rgba(0,0,0,0.3)']}
@@ -270,8 +270,7 @@ const styles = StyleSheet.create({
   },
   storyDesktop: {
     width: 600,
-    height: 700,
-    borderRadius: 16,
+    height: 600,
     overflow: 'hidden',
   },
   sideUserCardsRow: {
@@ -310,13 +309,11 @@ const styles = StyleSheet.create({
     top: 10,
     left: 0,
     right: 0,
-    height: 24,
     zIndex: 200,
     paddingHorizontal: 10,
   },
   header: {
     position: 'absolute',
-    top: 40,
     width: '100%',
     zIndex: 200,
   },
